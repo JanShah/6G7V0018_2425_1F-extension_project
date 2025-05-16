@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+    <include file="$(find extension_project)/launch/main_scene.launch" />
+
+    <node pkg="extension_project" type="camera.py" name="head_camera_detection" output="screen" required="true">
+        <param name="camera" value="head_camera" />
+        <param name="detection" value="true" />
+    </node>
+
+    <node pkg="extension_project" type="camera.py" name="right_hand_camera_detection" output="screen" required="true">
+        <param name="camera" value="right_hand_camera" />
+        <param name="detection" value="false" />
+    </node>
+</launch>
